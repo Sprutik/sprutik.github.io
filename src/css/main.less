@@ -1,0 +1,156 @@
+@import url("fonts.css") all;
+
+html{
+  box-sizing: border-box;
+  line-height: 1.15;
+}
+body{
+  font-family:  'SF Pro Display';
+}
+
+// Header start
+.header{
+  box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, .1);
+}
+
+.header-topline{
+ background-color: #000;
+ padding: 3px;
+}
+
+.header-topline-left{
+  flex-grow: 2;
+  padding: 0, 15px;
+}
+
+.header-topline-link{
+  text-align: center;
+  font-size: 11px;
+  margin-right: 20px;
+  transition: .2s;
+  letter-spacing: 1px;
+  line-height: 16px;
+  color: #ffffff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  &:visited{
+    color : #ffffff;
+  }
+  &:hover{
+    color: #d2d2d2;
+    text-decoration: none;
+  }
+  
+}
+.social-network{
+  margin-right: 10px;
+  height: 16px ;
+  width: 16px;
+}
+
+.header-main{
+ height: 80px;
+ padding: 20px;
+}
+
+.header-logo{
+  justify-content: center;
+  align-items: center;
+  img {
+    height: 55px;
+    width: 625px;
+    margin-bottom: 15px;
+  }
+}
+
+.header-main-nav{
+  ul{
+    list-style: none;
+    display: flex;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+    li{
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+}
+
+.nav-menu-link{
+  font-size: 16px;
+  display: block;
+  color: #000;
+  text-decoration: none;
+  margin-right: 20px;
+  font-weight:600 ;
+  &:last-child{
+    margin-right: 0ps;
+  }
+  &:hover{
+    color: #000;
+    text-decoration: none;
+    
+  }
+}
+
+
+// Main start
+.main-slider{
+  margin-top:15px;
+  height: 350px;
+  width: 100%;
+
+}
+
+.slider-img{ 
+  width: 750px;
+  height: 320px;
+  margin:0 10px;
+  border-radius:15px;
+  
+}
+
+.slick-prev{
+  z-index: 1;
+}
+
+
+// Footer start
+
+.footer{
+  margin-top: 50px;
+}
+
+.footer-link{
+  line-height:0;
+  padding: 0;
+  margin: 16px;
+  display: block;
+  color: #000;
+  text-decoration: none;
+  margin-right: 20px;
+  &:hover{
+    color: #3d3d3d;
+    text-decoration: none;
+  }
+}
+
+.footer-social-network{
+  margin-right: 20px;
+  width: 25px;
+  height: 25px;
+  
+}
+.footer-copyright{
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  font-size: 12px;
+  letter-spacing: .75px;
+  color: #969696;
+  padding: 0 10px 50px;
+}

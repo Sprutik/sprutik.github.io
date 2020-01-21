@@ -1,0 +1,9 @@
+@font-face {
+  font-family: 'SF Pro Display';
+  src: url('../fonts/SFProDisplay-Medium.eot');
+  src: local('SF Pro Display Medium'), local('SFProDisplay-Medium'),
+      url('../fonts/SFProDisplay-Medium.eot') format('embedded-opentype'),
+      url('../fonts/SFProDisplay-Medium.woff2') format('woff2'),
+      url('../fonts/SFProDisplay-Medium.woff') format('woff'),
+      url('../fonts/SFProDisplay-Medium.ttf') format('truetype');
+} 

@@ -62,6 +62,7 @@
 .slick-prev {
   left: 15%;
   top: 80%;
+  z-index: 1;
 }
 [dir="rtl"] .slick-prev {
   left: auto;
@@ -151,8 +152,8 @@
   color: #f82447;
   background: #f82447;
   opacity: 0.75;
-  box-shadow: 0 0 0 3px rgba(239, 69, 106, 0.3);
-  transition: 0.3s;
+  box-shadow: 0 0 0 5px rgba(239, 69, 106, 0.3);
+  transition: 0.7s;
   width: 15px;
   height: 15px;
   border-radius: 50%;

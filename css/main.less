@@ -1,4 +1,5 @@
 @import url("fonts.less") all;
+@import url("mobile-menu.less") all;
 
 @screen-sm: 576px;
 @screen-md: 768px;
@@ -18,6 +19,13 @@ body, html{
 // Header start
 .header{
   box-shadow: 0px 0px 13px 0px rgba(0, 0, 0, .1);
+  @media (max-width: @screen-md-max) {
+    height: 137px;
+    position: fixed;
+    z-index: 999;
+    background-color: #fff;
+    width: 100%;
+  }
 }
 
 .header-topline{
@@ -65,7 +73,7 @@ body, html{
   }
   @media (max-width: @screen-sm) {
     display: none;
-    font-size: 16px;
+    font-size: 14px;
   }
   
 }
@@ -119,8 +127,7 @@ body, html{
   align-items: center;
   img {
     height: 55px;
-    width: 625px;
-    margin-bottom: 15px;
+    width: 375px;
   }
 }
 
@@ -144,17 +151,7 @@ body, html{
           display: flex;
         }
       }
-      &:hover{
-        &::after{
-          content: '';
-          display: block;
-          width: 100%;
-          height: 3px;
-          background-color:black;
-          transition: 1s;
-          
-        }
-    }
+ 
   }
   
 }
@@ -183,7 +180,7 @@ body, html{
 .sub-menu{
   display: none ;
   position: absolute;
-  z-index: 999;
+  z-index: 99;
   box-shadow: 0 10 13px rgba(0, 0, 0, .0685009);
   height: 200px;
   max-width: 100%;
@@ -191,7 +188,7 @@ body, html{
   left: 0;
   right: 0;
   min-height: 120px;
-  margin-top:20px;
+  margin-top:13px;
   align-items:center;
   transition: 2s;
   &:hover{
@@ -200,12 +197,17 @@ body, html{
 }
 
 .sub-menu-item{
-  margin-right: 15px;
   width: 80px;
   height: 60px;
   justify-content: center;
   align-items: center;
   margin-right: 40px;
+  &:hover{
+    .sub-menu-link{
+      color:#f11532;
+    }
+  }
+  
 }
 .sub-menu-link{
   text-decoration: none;
@@ -219,31 +221,102 @@ body, html{
 
 .wrap{
   padding-top: 15px;
-  padding-bottom: 15px;
+  padding-bottom: 10px;
   text-align: center;
   margin-right: 20px;
   margin-left: 20px;
+  
+
   }
 }
+
+
+.underline{
+  z-index: 101;
+
+  &:hover{
+    &::after{
+      content: '';
+      display: block;
+      width: 100%;
+      height: 3px;
+      background-color:black;
+    }
+    }
+}
+
+
 .wrap-logo{
   display: none;
+  margin-right: 100px;
+
+}
+.wrap-logo-display{
+  .wrap-logo{
+    display: inline;
+  }
+}
+
+.stickyeah{
+  z-index: 100;
+  background-color: white;
+  height: 49px;
+  @media (max-width: @screen-lg) {
+    display: none;
+  } 
 }
 
 // Main start
-.main-slider{
-  margin-top:15px;
-  height: 350px;
-  width: 100%;
+.main-content{
+  @media (max-width: @screen-md-max) {
+    padding-top: 137px;
+  } 
+}
 
+.main-slider{
+  margin-top: 8px;
+  margin-bottom: 50px;
+  width: 100%;
 }
 
 .slider-img{ 
-  width: 700px;
-  height: 320px;
-  margin:0 10px;
+  margin:8px 10px;
   border-radius:15px;
-  
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  @media (max-width: 1599px) {
+    height: 370px;
+    width: 930px;
+  };
+  @media (max-width: 1439px) {
+    height: 320px;
+    width: 850px;
+
+  };
+  @media (max-width:@screen-lg-max){  
+    height: 310px;
+    width: 750px;
+
+  };
+  @media (max-width:@screen-md-max ){  
+    height: 250px;
+    width: 550px;
+  };
+  @media (max-width: @screen-sm-max){  
+    height: 170px;
+    width: 350px;
+    };
+ 
+ 
+ 
+ 
 }
+
+.slick-prev, .slick-next{
+  @media (max-width:@screen-md-max ){  
+    display: none;
+  };
+}
+
 
 // Footer start
 
@@ -279,10 +352,60 @@ body, html{
   padding: 0 10px 50px;
 }
 
-
-
-.stickyeah{
-  z-index: 100;
-  background-color: white;
- 
+.menu-container{
+  display: none;
+  z-index: 9;
+  @media (max-width: @screen-lg) {
+    display: flex;
+    position: absolute;
+  }
+  .menu-btn{
+    display: block;
+    width: 50px;
+    height: 50px;
+    position: relative;
+    z-index: 1000;
+  span{
+    position: absolute;
+    top: 50%;    margin-top: -1px;
+    left: 50%; margin-left: -10px;
+    width: 20px;
+    height: 2px;
+    background-color: #000;
+    &::after,&::before{
+      position: absolute;
+      top: 50%;    margin-top: -1px;
+      left: 50%; margin-left: -10px;
+      width: 20px;
+      height: 2px;
+      background-color: #000;
+      content: '';
+      transition: 0.5s;
+    }
+    &::before{
+      transform: translateY(-5px);
+    }
+    &::after{
+      transform: translateY(+5px);
+    }
+    }
+  }
+  .menu-btn-active{
+    span{
+    &::before{
+      transform:rotate(-45deg);
+      width: 10px;
+      transform-origin: left bottom;
+      }
+    &::after{
+      transform:rotate(45deg);
+      width: 10px;
+      transform-origin: left top;
+      }
+    }
+    
+  }
 }
+
+
+

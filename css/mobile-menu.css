@@ -1,0 +1,101 @@
+.mobile_menu_overlay,
+.mobile_menu_container {
+  position: fixed;
+  top: 137px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.mobile_menu_container,
+.mobile_menu_container ul li ul {
+  -webkit-transition: all 200ms;
+  -moz-transition: all 200ms;
+  transition: all 200ms;
+}
+.mobile_menu_overlay {
+  display: none;
+  cursor: pointer;
+  z-index: 120;
+  background: rgba(0, 0, 0, 0.5);
+}
+.mobile_menu_container {
+  -webkit-transform: translateX(-300px);
+  transform: translateX(-300px);
+  width: 300px;
+  overflow: hidden;
+  z-index: 121;
+  background: #3884da;
+}
+.mobile_menu_container.loaded {
+  -webkit-transform: translateX(0px);
+  transform: translateX(0px);
+}
+.mobile_menu_container .mobile_menu_content {
+  overflow: auto;
+  max-height: 100%;
+  padding-bottom: 30px;
+}
+.mobile_menu_container ul {
+  margin: 0;
+  padding: 0;
+}
+.mobile_menu_container ul li {
+  list-style: none;
+}
+.mobile_menu_container ul li a {
+  display: block;
+  padding: 15px 20px;
+  line-height: 20px;
+  font-size: 16px;
+  background: #3884da;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+}
+.mobile_menu_container ul li a.parent {
+  padding-right: 50px;
+  background: #3884da url("../img/mobile-menu/arrow_right.svg") right 20px center no-repeat;
+  background-size: 20px;
+}
+.mobile_menu_container ul li a.parent:hover {
+  background: #3c8de8 url("../img/mobile-menu/arrow_right.svg") right 20px center no-repeat;
+  background-size: 20px;
+}
+.mobile_menu_container ul li a.back {
+  padding-left: 50px;
+  background: #3c8de8 url("../img/mobile-menu/arrow_left.svg") left 20px center no-repeat;
+  background-size: 20px;
+  box-sizing: border-box;
+  min-height: 50px;
+}
+.mobile_menu_container ul li a.back:hover {
+  background: #3c8de8 url("../img/mobile-menu/arrow_left.svg") left 20px center no-repeat;
+  background-size: 20px;
+}
+.mobile_menu_container ul li a:hover {
+  background: #3c8de8;
+}
+.mobile_menu_container ul li ul {
+  -webkit-transform: translateX(300px);
+  transform: translateX(300px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #3884da;
+  z-index: 2;
+}
+.mobile_menu_container ul li ul.loaded {
+  -webkit-transform: translateX(0px);
+  transform: translateX(0px);
+}
+.mobile_menu_container ul li ul.activity {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+@media (max-width: 320px) {
+  .mobile_menu_container {
+    width: 240px;
+  }
+}
